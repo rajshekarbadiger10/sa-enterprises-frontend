@@ -109,10 +109,10 @@ export function WhatsAppEnquiryModal({
           </button>
         </div>
 
-        <div className="p-6 space-y-5 overflow-y-auto max-h-[70vh]">
+        <div className="p-4 space-y-3 overflow-y-auto max-h-[65vh]">
           {/* Product Info (read-only) */}
-          <div className="bg-slate-50 border border-slate-100 rounded-xl p-4 space-y-2">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
+          <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 space-y-1">
+            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
               Product Details
             </p>
             <div className="flex items-start gap-2">
