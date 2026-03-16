@@ -194,42 +194,27 @@ export function WhatsAppEnquiryModal({
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Message Preview */}
-          <details className="group">
-            <summary className="text-xs text-slate-500 hover:text-slate-700 cursor-pointer select-none flex items-center gap-1">
-              <ChevronRight
-                size={13}
-                className="group-open:rotate-90 transition-transform"
-              />
-              Preview WhatsApp message
-            </summary>
-            <div className="mt-2 bg-green-50 border border-green-100 rounded-xl p-3">
-              <pre className="text-xs text-slate-600 whitespace-pre-wrap font-sans leading-relaxed">
-                {previewMessage}
-              </pre>
-            </div>
-          </details>
-
-          {/* Actions */}
-          <div className="flex gap-3 pt-1">
+        {/* Actions — sticky at bottom */}
+        <div className="px-4 pb-4 pt-3 border-t border-slate-100 bg-white rounded-b-2xl">
+          <div className="flex gap-3">
             <button
               onClick={onClose}
-              className="flex-1 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-3 rounded-xl text-sm transition-colors"
+              className="flex-1 border border-slate-200 text-slate-600 hover:bg-slate-50 font-medium py-2.5 rounded-xl text-sm transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleSendEnquiry}
-              className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-sm shadow-green-200"
+              className="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
             >
               <MessageCircle size={17} />
               Send on WhatsApp
             </button>
           </div>
-
-          <p className="text-center text-xs text-slate-400">
-            This will open WhatsApp with the pre-filled message
+          <p className="text-center text-xs text-slate-400 mt-2">
+            Opens WhatsApp with pre-filled message
           </p>
         </div>
         </div>
