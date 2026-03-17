@@ -10,7 +10,7 @@ export const categories: Category[] = [
     slug: "fasteners",
     name: "Fasteners",
     description: "Bolts, nuts, washers, screws and anchors for every industrial application",
-    image: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80",
+    image: "https://res.cloudinary.com/rsc/image/upload/F5080994-01",
     productCount: 14,
     icon: "settings",
     subcategories: [
