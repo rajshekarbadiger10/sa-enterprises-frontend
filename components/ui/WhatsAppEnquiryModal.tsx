@@ -2,14 +2,7 @@
 // components/ui/WhatsAppEnquiryModal.tsx
 
 import { useState, useEffect } from "react";
-import {
-  X,
-  MessageCircle,
-  Package,
-  Building2,
-  MapPin,
-  Hash,
-} from "lucide-react";
+import { X, MessageCircle, Package, Building2, MapPin, Hash } from "lucide-react";
 import { generateWhatsAppLink } from "@/lib/utils";
 
 interface WhatsAppEnquiryModalProps {
@@ -27,11 +20,12 @@ export function WhatsAppEnquiryModal({
   productCode,
   productUrl,
 }: WhatsAppEnquiryModalProps) {
+
   const [quantity, setQuantity] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [location, setLocation] = useState("");
 
-  // Lock body scroll when modal open
+  // Lock page scroll
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -44,11 +38,11 @@ export function WhatsAppEnquiryModal({
     };
   }, [isOpen]);
 
-  // Escape key close
+  // ESC close
   useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
+    const handleKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-    }
+    };
 
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
@@ -71,16 +65,16 @@ export function WhatsAppEnquiryModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto">
+    <div className="fixed inset-0 z-[9999] overflow-y-auto">
 
-      {/* Backdrop */}
+      {/* Overlay */}
       <div
         className="fixed inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
 
       {/* Modal Wrapper */}
-      <div className="flex min-h-full items-start justify-center p-4 pt-12">
+      <div className="flex min-h-full items-start justify-center p-4 pt-24">
 
         {/* Modal */}
         <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg">
@@ -114,11 +108,13 @@ export function WhatsAppEnquiryModal({
 
             {/* Product Info */}
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-3">
+
               <p className="text-xs font-semibold text-slate-500 uppercase mb-2">
                 Product Details
               </p>
 
               <div className="flex gap-2 items-start">
+
                 <Package size={14} className="text-orange-500 mt-1" />
 
                 <div>
@@ -130,6 +126,7 @@ export function WhatsAppEnquiryModal({
                     {productCode}
                   </p>
                 </div>
+
               </div>
             </div>
 
@@ -142,11 +139,13 @@ export function WhatsAppEnquiryModal({
 
               {/* Quantity */}
               <div>
+
                 <label className="text-sm font-medium text-slate-700 block mb-1">
                   Quantity Required
                 </label>
 
                 <div className="relative">
+
                   <Hash
                     size={15}
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
@@ -159,16 +158,20 @@ export function WhatsAppEnquiryModal({
                     placeholder="e.g. 5 units, 10 pieces"
                     className="w-full border border-slate-200 rounded-lg pl-9 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none"
                   />
+
                 </div>
+
               </div>
 
-              {/* Company */}
+              {/* Company Name */}
               <div>
+
                 <label className="text-sm font-medium text-slate-700 block mb-1">
                   Company Name
                 </label>
 
                 <div className="relative">
+
                   <Building2
                     size={15}
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
@@ -181,16 +184,20 @@ export function WhatsAppEnquiryModal({
                     placeholder="e.g. Tata Chemicals Ltd"
                     className="w-full border border-slate-200 rounded-lg pl-9 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none"
                   />
+
                 </div>
+
               </div>
 
               {/* Location */}
               <div>
+
                 <label className="text-sm font-medium text-slate-700 block mb-1">
                   Location
                 </label>
 
                 <div className="relative">
+
                   <MapPin
                     size={15}
                     className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
@@ -203,13 +210,16 @@ export function WhatsAppEnquiryModal({
                     placeholder="e.g. Mumbai, Maharashtra"
                     className="w-full border border-slate-200 rounded-lg pl-9 pr-4 py-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none"
                   />
+
                 </div>
+
               </div>
 
             </div>
+
           </div>
 
-          {/* Footer Buttons */}
+          {/* Footer */}
           <div className="px-5 pb-5 pt-3 border-t border-slate-100 bg-white rounded-b-2xl">
 
             <div className="flex gap-3">
@@ -238,6 +248,7 @@ export function WhatsAppEnquiryModal({
           </div>
 
         </div>
+
       </div>
     </div>
   );
