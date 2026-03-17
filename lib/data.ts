@@ -149,7 +149,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.4, reviewCount: 89,
     images: [
-      "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80",
+      "https://i5.walmartimages.com/seo/Carriage-Bolts-Neck-Carriage-Bolt-Round-Head-Square-Neck-304-Stainless-Steel-M12x35mm-3-pcs_a95c4021-2a1f-4fb7-8734-9cd28bad46e0.86fc4a346cb73a4d344de95adf4f637d.jpeg",
     ],
     description: "MS carriage bolts with domed head and square neck for anti-rotation. Zinc plated. Ideal for timber, wood-to-metal, and agricultural equipment.",
     applications: ["Timber structures","Agricultural equipment","Park furniture","Conveyor frames","General construction"],
@@ -165,7 +165,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.5, reviewCount: 65,
     images: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "https://m.media-amazon.com/images/I/61Gc7seOa8L.jpg",
     ],
     description: "Forged carbon steel eye bolts to DIN 580 for lifting and rigging. Closed eye, WLL stamped on head. Hot-dip galvanized for outdoor and marine use.",
     applications: ["Lifting and hoisting","Rigging and tie-down","Marine and offshore","Construction cranes","Cable management"],
@@ -181,7 +181,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.8, reviewCount: 92,
     images: [
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      "https://www.kenenghardware.com/wp-content/uploads/2023/06/stud-bolts.jpg",
     ],
     description: "ASTM A193 Grade B7 alloy steel stud bolts with ASTM A194 Grade 2H heavy hex nuts for pressure flanges and high-temperature piping.",
     applications: ["Pressure flange connections","High-temperature piping","Valve bonnet studs","Pressure vessels","Refinery piping"],
@@ -197,7 +197,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.5, reviewCount: 145,
     images: [
-      "https://images.unsplash.com/photo-1609205807107-1b60b52e5c37?w=800&q=80",
+      "https://tse1.mm.bing.net/th/id/OIP.RAB55815mx9Pxjp7tpcx4AHaHa?pid=Api&P=0&h=180",
     ],
     description: "Grade 8 hex nuts zinc plated to DIN 934 / IS 1363. For structural bolting and heavy machinery. Available M4 to M64, SS 304/316 grades also stocked.",
     applications: ["Structural bolting","Heavy machinery","Flanged connections","Equipment assembly","Automotive"],
@@ -213,7 +213,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.5, reviewCount: 132,
     images: [
-      "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80",
+      "https://tse1.mm.bing.net/th/id/OIP.nBy0it76zg8qlRKR8inCyAHaGX?pid=Api&P=0&h=180",
     ],
     description: "SS 304 nylock (nylon insert) lock nuts to DIN 985. Vibration-resistant — nylon insert prevents loosening under dynamic loads.",
     applications: ["Vibrating machinery","Automotive assembly","Fan and pump mounting","Conveyor systems","Dynamic load joints"],
@@ -229,7 +229,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.7, reviewCount: 104,
     images: [
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+      "https://cdn.shopify.com/s/files/1/0106/5851/2932/products/ankr_tite_stainless-316_wedge-anchor_mechanical_anchors@2x.png?v=1573688971",
     ],
     description: "Hilti HST3 wedge anchor for heavy-duty fixing in solid concrete. ETA approved for cracked and uncracked concrete structural applications.",
     applications: ["Structural steel to concrete","Machine bases","Racking and shelving","Safety barriers","Overhead fixing"],
