@@ -38,8 +38,8 @@ export function Header() {
               +91 84317 09221
             </a>
             <span className="hidden md:inline">|</span>
-            <a href="mailto:sales@saenterprises.in" className="hidden md:inline hover:text-white transition-colors">
-              sales@saenterprises.in
+            <a href="mailto:info@saenterprisestrading.com" className="hidden md:inline hover:text-white transition-colors">
+              info@saenterprisestrading.com
             </a>
           </div>
         </div>
