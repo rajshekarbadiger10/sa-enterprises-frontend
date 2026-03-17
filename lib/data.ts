@@ -117,7 +117,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.6, reviewCount: 210,
     images: [
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      "https://res.cloudinary.com/rsc/image/upload/F5080994-01",
     ],
     description: "High tensile Grade 8.8 hex bolts to IS 1364 / DIN 931. For structural steel, heavy machinery, and high-load applications. Available M6 to M64, 20 to 300 mm length.",
     applications: ["Structural steelwork","Heavy machinery assembly","Bridge construction","Flanged pipe joints","Equipment mounting"],
