@@ -133,7 +133,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.7, reviewCount: 178,
     images: [
-      "https://images.unsplash.com/photo-1609205807107-1b60b52e5c37?w=800&q=80",
+      "https://m.media-amazon.com/images/I/71VRkGuP6PL.jpg",
     ],
     description: "Grade 12.9 alloy steel socket head cap screws to DIN 912 / ISO 4762. Black oxide finish for precision machinery and high-stress joints.",
     applications: ["CNC machine tool assembly","Precision engineering","Mould and die clamping","Automotive assembly","Hydraulic block mounting"],
