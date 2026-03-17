@@ -245,7 +245,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.3, reviewCount: 112,
     images: [
-      "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=800&q=80",
+      "https://punchlistzero.com/wp-content/uploads/2021/08/self-tapping-screws.jpg",
     ],
     description: "Zinc plated pan head Phillips self-tapping screws (Type A) for sheet metal, plastic, and light timber. Hardened carbon steel with sharp point.",
     applications: ["Sheet metal fabrication","Electrical enclosures","Plastic fixing","Light timber","HVAC ducting"],
@@ -261,7 +261,7 @@ export const products: Product[] = [
     categorySlug: "fasteners", categoryName: "Fasteners",
     price: 0, rating: 4.3, reviewCount: 198,
     images: [
-      "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      "https://5.imimg.com/data5/SELLER/Default/2021/7/NY/XV/TG/157452/plain-spring-washers-1000x1000.jpg",
     ],
     description: "Complete washer range including plain (Form A/B/C), spring lock, star, and fender washers in zinc plated MS. Stainless steel 304 available.",
     applications: ["Bolt load distribution","Vibration locking","General assembly","Structural bolting","Machine assembly"],
