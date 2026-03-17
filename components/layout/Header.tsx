@@ -54,7 +54,7 @@ export function Header() {
               <img
                 src="/images/logo.jpeg"
                 alt="S A Enterprises"
-                className="w-24 h-24 object-contain"
+                className="w-16 h-16 object-contain"
               />
               <div>
                 <span className="font-display font-bold text-xl text-slate-900 leading-none block">S A</span>
