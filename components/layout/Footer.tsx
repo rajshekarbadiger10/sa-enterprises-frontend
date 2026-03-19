@@ -22,15 +22,28 @@ export function Footer() {
               India's trusted supplier of fasteners, raw materials, mechanical components, electrical, hydraulic, safety, and MRO products.
             </p>
             <div className="space-y-2">
-              <a href="tel:+918431709221" className="flex items-center gap-2 text-sm hover:text-orange-400 transition-colors">
+              <a href="tel:+918431709221" className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors">
                 <Phone size={14} /> +91 84317 09221
               </a>
-              <a href="mailto:sales@saenterprises.in" className="flex items-center gap-2 text-sm hover:text-orange-400 transition-colors">
-                <Mail size={14} /> sales@saenterprises.in
+              <a href="mailto:info@saenterprisestrading.com" className="flex items-center gap-2 text-sm hover:text-blue-400 transition-colors">
+                <Mail size={14} /> info@saenterprisestrading.com
               </a>
-              <div className="flex items-start gap-2 text-sm">
-                <MapPin size={14} className="mt-0.5 shrink-0" />
-                <span className="text-slate-400">Plot 42, MIDC Industrial Area, Pune, Maharashtra 411018</span>
+              <div className="flex items-start gap-2.5 text-sm mt-4">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-blue-400" />
+                <div className="text-slate-400 leading-relaxed max-w-sm">
+                  <p className="font-semibold text-slate-300 mb-1">Principal Place of Business:</p>
+                  <p className="mb-2">
+                    15, 1st Main Road, Near Sri Anjaneyaswamy Temple &amp; Maramma Temple, Nalagadderanahalli, <span className="text-white font-medium">Bengaluru</span>, <span className="text-blue-400 font-medium">Karnataka 560058</span>
+                  </p>
+                  <a 
+                    href="https://maps.google.com/?q=15+1st+Main+Road+Sri+Anjaneyaswamy+Temple+Nalagadderanahalli+Bengaluru+560058" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-1 text-blue-400 hover:text-blue-300 font-medium transition-colors group"
+                  >
+                    Get Directions <ExternalLink size={12} className="group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -41,7 +54,7 @@ export function Footer() {
             <ul className="space-y-2">
               {categories.map((cat) => (
                 <li key={cat.slug}>
-                  <Link href={`/category/${cat.slug}`} className="text-sm hover:text-orange-400 transition-colors">
+                  <Link href={`/category/${cat.slug}`} className="text-sm hover:text-blue-400 transition-colors">
                     {cat.name}
                   </Link>
                 </li>
@@ -55,7 +68,7 @@ export function Footer() {
             <ul className="space-y-2">
               {["About Us", "Our Brands", "Case Studies", "Careers", "Blog", "Contact Us"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm hover:text-orange-400 transition-colors">{item}</Link>
+                  <Link href="#" className="text-sm hover:text-blue-400 transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>
@@ -67,7 +80,7 @@ export function Footer() {
             <ul className="space-y-2">
               {["Technical Consultation", "Calibration Services", "AMC & Service Contracts", "Installation Support", "Spare Parts", "Training"].map((item) => (
                 <li key={item}>
-                  <Link href="#" className="text-sm hover:text-orange-400 transition-colors">{item}</Link>
+                  <Link href="#" className="text-sm hover:text-blue-400 transition-colors">{item}</Link>
                 </li>
               ))}
             </ul>

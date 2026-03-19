@@ -69,7 +69,7 @@ export function ProductListingClient({ products }: ProductListingClientProps) {
         <div className="flex items-center justify-between mb-5 bg-white rounded-xl border border-slate-100 shadow-sm px-4 py-3">
           <div className="flex items-center gap-3">
             <button
-              className="lg:hidden flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-orange-600"
+              className="lg:hidden flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-blue-600"
               onClick={() => setMobileFiltersOpen(true)}
             >
               <SlidersHorizontal size={16} /> Filters
@@ -81,13 +81,13 @@ export function ProductListingClient({ products }: ProductListingClientProps) {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setViewMode("grid")}
-              className={`p-2 rounded-lg transition-colors ${viewMode === "grid" ? "bg-orange-100 text-orange-600" : "text-slate-400 hover:text-slate-600"}`}
+              className={`p-2 rounded-lg transition-colors ${viewMode === "grid" ? "bg-blue-100 text-blue-600" : "text-slate-400 hover:text-slate-600"}`}
             >
               <LayoutGrid size={18} />
             </button>
             <button
               onClick={() => setViewMode("list")}
-              className={`p-2 rounded-lg transition-colors ${viewMode === "list" ? "bg-orange-100 text-orange-600" : "text-slate-400 hover:text-slate-600"}`}
+              className={`p-2 rounded-lg transition-colors ${viewMode === "list" ? "bg-blue-100 text-blue-600" : "text-slate-400 hover:text-slate-600"}`}
             >
               <LayoutList size={18} />
             </button>

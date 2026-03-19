@@ -37,7 +37,7 @@ export function ProductDetailClient({ product }: Props) {
                   key={idx}
                   onClick={() => setActiveImage(idx)}
                   className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                    activeImage === idx ? "border-orange-500 shadow-md" : "border-slate-200 hover:border-slate-300"
+                    activeImage === idx ? "border-blue-500 shadow-md" : "border-slate-200 hover:border-slate-300"
                   }`}
                 >
                   <img src={img} alt="" className="w-full h-full object-cover" />
@@ -53,7 +53,7 @@ export function ProductDetailClient({ product }: Props) {
 
         {/* Brand + Name */}
         <div>
-          <span className="text-sm font-bold text-orange-600 uppercase tracking-wider">
+          <span className="text-sm font-bold text-blue-600 uppercase tracking-wider">
             {product.brand}
           </span>
           <h1 className="font-display text-2xl md:text-3xl font-bold text-slate-900 leading-tight mt-1">
@@ -78,8 +78,8 @@ export function ProductDetailClient({ product }: Props) {
         </div>
 
         {/* Price */}
-        <div className="bg-orange-50 border border-orange-100 rounded-xl px-5 py-4">
-          <div className="inline-flex items-center gap-2 text-orange-700 font-semibold text-base">
+        <div className="bg-blue-50 border border-blue-100 rounded-xl px-5 py-4">
+          <div className="inline-flex items-center gap-2 text-blue-700 font-semibold text-base">
             💬 Contact us for best price
           </div>
           <p className="text-xs text-slate-500 mt-1">
@@ -98,7 +98,7 @@ export function ProductDetailClient({ product }: Props) {
           />
           <a
             href="tel:+918431709221"
-            className="flex items-center justify-center gap-2 w-full border-2 border-slate-200 hover:border-orange-300 hover:bg-orange-50 text-slate-700 font-semibold py-3 rounded-xl transition-all text-sm"
+            className="flex items-center justify-center gap-2 w-full border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 font-semibold py-3 rounded-xl transition-all text-sm"
           >
             <Phone size={17} /> Call to Order — +91 84317 09221
           </a>
@@ -109,7 +109,7 @@ export function ProductDetailClient({ product }: Props) {
           {[
             { icon: <ShieldCheck size={15} className="text-green-500" />, text: "100% Genuine Product" },
             { icon: <Package size={15} className="text-blue-500" />, text: "Manufacturer Warranty" },
-            { icon: <Truck size={15} className="text-orange-500" />, text: "Pan-India Delivery" },
+            { icon: <Truck size={15} className="text-blue-500" />, text: "Pan-India Delivery" },
             { icon: <MessageCircle size={15} className="text-green-500" />, text: "Technical Support Included" },
           ].map(({ icon, text }) => (
             <div key={text} className="flex items-center gap-2 text-xs text-slate-600 bg-white border border-slate-100 rounded-lg px-3 py-2">

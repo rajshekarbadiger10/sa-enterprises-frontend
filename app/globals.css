@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 :root {
-  --brand: #ea580c;
-  --brand-light: #fb923c;
-  --brand-dark: #c2410c;
+  --brand: #2563eb;
+  --brand-light: #60a5fa;
+  --brand-dark: #1d4ed8;
   --surface: #f8fafc;
   --border: #e2e8f0;
 }
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5 {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 active:scale-95;
+    @apply inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-lg transition-all duration-200 active:scale-95 shadow-md shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30;
   }
 
   .btn-secondary {
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .card {
-    @apply bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-200;
+    @apply bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300;
   }
 
   .badge {
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
   }
 
   .input {
-    @apply w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all;
+    @apply w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all;
   }
 
   .section-title {

@@ -1,6 +1,7 @@
 "use client";
 // components/ui/WhatsAppEnquiryModal.tsx
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import {
   X,
   MessageCircle,
@@ -76,7 +77,7 @@ export function WhatsAppEnquiryModal({
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 overflow-y-auto">
       {/* Backdrop */}
       <div
@@ -87,7 +88,7 @@ export function WhatsAppEnquiryModal({
       {/* Modal wrapper — centers and allows scroll */}
       <div className="flex min-h-full items-center justify-center p-4">
         {/* Modal */}
-        <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg animate-slide-up">
+        <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg animate-slide-up flex flex-col max-h-[90vh]">
           {/* Header */}
           <div className="bg-green-500 px-6 py-4 flex items-center gap-3 rounded-t-2xl">
           <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -109,14 +110,14 @@ export function WhatsAppEnquiryModal({
           </button>
         </div>
 
-        <div className="p-4 space-y-3 overflow-y-auto max-h-[65vh]">
+        <div className="p-4 space-y-3 overflow-y-auto flex-1 min-h-0">
           {/* Product Info (read-only) */}
           <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 space-y-1">
             <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
               Product Details
             </p>
             <div className="flex items-start gap-2">
-              <Package size={14} className="text-orange-500 mt-0.5 shrink-0" />
+              <Package size={14} className="text-blue-500 mt-0.5 shrink-0" />
               <div>
                 <p className="text-sm font-semibold text-slate-800 leading-snug">
                   {productName}
@@ -197,7 +198,7 @@ export function WhatsAppEnquiryModal({
         </div>
 
         {/* Actions — sticky at bottom */}
-        <div className="px-4 pb-4 pt-3 border-t border-slate-100 bg-white rounded-b-2xl">
+        <div className="px-4 pb-4 pt-3 border-t border-slate-100 bg-white rounded-b-2xl shrink-0">
           <div className="flex gap-3">
             <button
               onClick={onClose}
@@ -219,6 +220,7 @@ export function WhatsAppEnquiryModal({
         </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

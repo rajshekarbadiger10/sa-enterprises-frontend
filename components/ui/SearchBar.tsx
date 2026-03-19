@@ -55,7 +55,7 @@ export function SearchBar() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search products, brands, part numbers..."
-            className="w-full bg-slate-50 border border-slate-200 rounded-l-lg pl-9 pr-9 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
+            className="w-full bg-slate-50 border border-slate-200 rounded-l-lg pl-9 pr-9 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
             onFocus={() => query.length >= 2 && setOpen(true)}
           />
           {query && (
@@ -70,7 +70,7 @@ export function SearchBar() {
         </div>
         <button
           type="submit"
-          className="bg-orange-600 hover:bg-orange-700 text-white px-5 py-2.5 rounded-r-lg text-sm font-semibold transition-colors shrink-0"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-r-lg text-sm font-semibold transition-colors shrink-0"
         >
           Search
         </button>
@@ -85,7 +85,7 @@ export function SearchBar() {
                 key={product.id}
                 href={`/products/${product.id}`}
                 onClick={() => setOpen(false)}
-                className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-orange-50 group transition-colors"
+                className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-blue-50 group transition-colors"
               >
                 <div className="w-10 h-10 bg-slate-100 rounded-lg overflow-hidden shrink-0">
                   <img
@@ -98,14 +98,14 @@ export function SearchBar() {
                   <p className="text-sm font-semibold text-slate-800 truncate">{product.name}</p>
                   <p className="text-xs text-slate-500">{product.brand} · {product.productCode}</p>
                 </div>
-                <ArrowRight size={14} className="text-slate-300 group-hover:text-orange-600 transition-colors shrink-0" />
+                <ArrowRight size={14} className="text-slate-300 group-hover:text-blue-600 transition-colors shrink-0" />
               </Link>
             ))}
           </div>
           <div className="border-t border-slate-100 p-2">
             <button
               onClick={handleSubmit}
-              className="w-full text-center text-sm text-orange-600 hover:text-orange-700 font-medium py-1.5"
+              className="w-full text-center text-sm text-blue-600 hover:text-blue-700 font-medium py-1.5"
             >
               See all results for "{query}"
             </button>

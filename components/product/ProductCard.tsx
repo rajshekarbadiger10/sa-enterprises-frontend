@@ -39,7 +39,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-1.5">
             {product.tag === "bestseller" && (
-              <span className="badge bg-orange-600 text-white">🏆 Bestseller</span>
+              <span className="badge bg-blue-600 text-white">🏆 Bestseller</span>
             )}
             {product.tag === "new" && (
               <span className="badge bg-emerald-500 text-white">✦ New</span>
@@ -66,7 +66,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <div className="flex-1 p-4 flex flex-col gap-2">
           {/* Brand + Code */}
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-orange-600 uppercase tracking-wider">
+            <span className="text-xs font-bold text-blue-600 uppercase tracking-wider">
               {product.brand}
             </span>
             <span className="font-mono text-[10px] text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">
@@ -76,7 +76,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
 
           {/* Name */}
           <Link href={`/products/${product.id}`}>
-            <h3 className="font-semibold text-slate-800 text-sm leading-snug line-clamp-2 hover:text-orange-600 transition-colors">
+            <h3 className="font-semibold text-slate-800 text-sm leading-snug line-clamp-2 hover:text-blue-600 transition-colors">
               {product.name}
             </h3>
           </Link>
@@ -98,7 +98,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
                 <p className="text-[10px] text-slate-400">+ GST applicable</p>
               </>
             ) : (
-              <div className="inline-flex items-center gap-1.5 bg-orange-50 border border-orange-200 text-orange-700 text-xs font-semibold px-3 py-1.5 rounded-lg">
+              <div className="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-lg">
                 💬 Enquire for Price
               </div>
             )}

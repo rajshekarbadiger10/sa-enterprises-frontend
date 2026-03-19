@@ -1,774 +1,3281 @@
 // lib/data.ts
 import { Product, Category } from "./types";
 
-// ── Reliable image helper using picsum with seed ─────────────
-// picsum.photos/seed/{seed}/800/600 always returns the SAME image for the same seed
-// We use descriptive seeds so images are consistent and varied
-
 export const categories: Category[] = [
   {
-    slug: "fasteners",
-    name: "Fasteners",
-    description: "Bolts, nuts, washers, screws and anchors for every industrial application",
-    image: "https://res.cloudinary.com/rsc/image/upload/F5080994-01",
-    productCount: 14,
-    icon: "settings",
-    subcategories: [
-      "Hex Bolts","Allen Bolts","Carriage Bolts","Eye Bolts","U-Bolts",
-      "Foundation Bolts","Flange Bolts","Stud Bolts",
-      "Hex Nuts","Nylock Nuts","Dome Nuts","Flange Nuts",
-      "Plain Washers","Spring Washers","Star Washers","Fender Washers",
-      "Self Tapping Screws","Self Drilling Screws",
-      "Wedge Anchors","Chemical Anchors","Sleeve Anchors",
+    "slug": "fasteners",
+    "name": "Fasteners",
+    "description": "Bolts, nuts, washers, screws and anchors for every industrial application",
+    "image": "https://res.cloudinary.com/rsc/image/upload/F5080994-01",
+    "icon": "settings",
+    "subcategories": [
+      "Hex Bolts",
+      "Allen Bolts",
+      "Carriage Bolts",
+      "Eye Bolts",
+      "U-Bolts",
+      "Foundation Bolts",
+      "Flange Bolts",
+      "Stud Bolts",
+      "Hex Nuts",
+      "Nyloc Nuts",
+      "Dome Nuts",
+      "Flange Nuts",
+      "Plain Washers",
+      "Spring Washers",
+      "Star Washers",
+      "Fender Washers",
+      "Self Tapping Screws",
+      "Self Drilling Screws",
+      "Wedge Anchors",
+      "Chemical Anchors",
+      "Sleeve Anchors"
     ],
+    "productCount": 21
   },
   {
-    slug: "raw-materials",
-    name: "Raw Materials",
-    description: "MS, SS, aluminium, copper and brass materials in all standard forms",
-    image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80",
-    productCount: 9,
-    icon: "layers",
-    subcategories: [
-      "MS Plates & Sheets","MS Rods & Bars","MS Pipes (ERW/Seamless)",
-      "Channels, Angles & I-Beams","SS 202/304/316 Sheets","SS Pipes & Rods",
-      "Aluminium Sheets & Rods","Copper Wires & Bus Bars","Brass & Bronze Components",
+    "slug": "raw-materials",
+    "name": "Raw Materials",
+    "description": "MS, SS, aluminium, copper and brass materials in all standard forms",
+    "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=80",
+    "icon": "layers",
+    "subcategories": [
+      "MS Plates",
+      "MS Sheets",
+      "MS Rods",
+      "Round Bars",
+      "Square Bars",
+      "MS Pipes (ERW/Seamless)",
+      "Channels",
+      "Angles",
+      "I-Beams",
+      "SS 202 Sheets",
+      "SS 304 Sheets",
+      "SS 316 Sheets",
+      "SS Pipes",
+      "SS Rods",
+      "Aluminium Sheets",
+      "Aluminium Rods",
+      "Copper Wires",
+      "Bus Bars",
+      "Brass Components",
+      "Bronze Components"
     ],
+    "productCount": 20
   },
   {
-    slug: "mechanical-components",
-    name: "Mechanical Components",
-    description: "Bearings, gearboxes, belts, chains, couplings and power transmission parts",
-    image: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&q=80",
-    productCount: 8,
-    icon: "gauge",
-    subcategories: [
-      "Ball Bearings","Roller Bearings","Pillow Block Bearings",
-      "Industrial Gearboxes","V Belts","Timing Belts","Roller Chains",
-      "Couplings","Sprockets","Pulleys","Shafts",
+    "slug": "mechanical-components",
+    "name": "Mechanical Components",
+    "description": "Bearings, gearboxes, belts, chains, couplings and power transmission parts",
+    "image": "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&q=80",
+    "icon": "gauge",
+    "subcategories": [
+      "Ball Bearings",
+      "Roller Bearings",
+      "Pillow Block Bearings",
+      "Industrial Gearboxes",
+      "Worm Gearboxes",
+      "Helical Gearboxes",
+      "V Belts",
+      "Timing Belts",
+      "Roller Chains",
+      "Couplings",
+      "Sprockets",
+      "Pulleys",
+      "Shafts"
     ],
+    "productCount": 13
   },
   {
-    slug: "electrical-automation",
-    name: "Electrical & Automation",
-    description: "Cables, panels, motors, drives, transformers and switchgear",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
-    productCount: 6,
-    icon: "zap",
-    subcategories: [
-      "Industrial Power Cables","Control Cables","Batteries",
-      "Cable Trays","Cable Glands","Insulation Tapes",
-      "MCC Panels","PCC Panels","PLC Panels","HMIs",
-      "Servo Motors","AC Motors","DC Motors","Industrial Fans",
-      "VFD Drives","Transformers","Switchgear",
+    "slug": "electrical-automation",
+    "name": "Electrical & Automation",
+    "description": "Cables, panels, motors, drives, transformers and switchgear",
+    "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
+    "icon": "zap",
+    "subcategories": [
+      "Industrial Power Cables",
+      "Batteries",
+      "Control Cables",
+      "Cable Trays",
+      "Cable Glands",
+      "Insulation Tapes",
+      "MCC Panels",
+      "PCC Panels",
+      "PLC Panels",
+      "HMIs",
+      "Servo Motors",
+      "AC Motors",
+      "DC Motors",
+      "Fans",
+      "VFD Drives",
+      "Transformers",
+      "Switchgear"
     ],
+    "productCount": 17
   },
   {
-    slug: "hydraulic-pneumatic",
-    name: "Hydraulic & Pneumatic",
-    description: "Cylinders, pumps, compressors, valves and fluid power components",
-    image: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&q=80",
-    productCount: 6,
-    icon: "droplets",
-    subcategories: [
-      "Hydraulic Cylinders","Hydraulic Pumps","Hydraulic Power Packs",
-      "Pneumatic Cylinders","Air Compressors",
-      "FRL Units","Solenoid Valves","Hydraulic Hoses","PU Tubes",
+    "slug": "hydraulic-pneumatic",
+    "name": "Hydraulic & Pneumatic",
+    "description": "Cylinders, pumps, compressors, valves and fluid power components",
+    "image": "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=600&q=80",
+    "icon": "droplets",
+    "subcategories": [
+      "Hydraulic Cylinders",
+      "Hydraulic Pumps",
+      "Hydraulic Power Packs",
+      "Pneumatic Cylinders",
+      "Air Compressors",
+      "FRL Units",
+      "Solenoid Valves",
+      "Hydraulic Hoses",
+      "PU Tubes"
     ],
+    "productCount": 9
   },
   {
-    slug: "industrial-safety",
-    name: "Industrial Safety",
-    description: "PPE, fire safety and workplace protection equipment",
-    image: "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=600&q=80",
-    productCount: 5,
-    icon: "shield",
-    subcategories: [
-      "Safety Helmets","Safety Gloves","Safety Goggles",
-      "Steel Toe Safety Shoes","Reflective Jackets","Safety Harness",
-      "Fire Extinguishers","Smoke Detectors","Fire Blankets",
+    "slug": "industrial-safety",
+    "name": "Industrial Safety",
+    "description": "PPE, fire safety and workplace protection equipment",
+    "image": "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=600&q=80",
+    "icon": "shield",
+    "subcategories": [
+      "Safety Helmets",
+      "Gloves",
+      "Goggles",
+      "Steel Toe Safety Shoes",
+      "Reflective Jackets",
+      "Safety Harness",
+      "Fire Extinguishers",
+      "Smoke Detectors",
+      "Fire Blankets"
     ],
+    "productCount": 9
   },
   {
-    slug: "consumables-mro",
-    name: "Consumables & MRO",
-    description: "Welding, grinding, cutting, lubricants and maintenance supplies",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
-    productCount: 6,
-    icon: "wrench",
-    subcategories: [
-      "Welding Electrodes & Rods","Grinding Wheels","Cutting Discs",
-      "Drill Bits","Taps & Dies","Lubricants","Grease",
-      "Industrial Adhesives","Sealants","Cleaning Chemicals","Maintenance Supplies",
+    "slug": "consumables-mro",
+    "name": "Consumables & MRO",
+    "description": "Welding, grinding, cutting, lubricants and maintenance supplies",
+    "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80",
+    "icon": "wrench",
+    "subcategories": [
+      "Welding Electrodes",
+      "Welding Rods",
+      "Grinding Wheels",
+      "Cutting Discs",
+      "Drill Bits",
+      "Taps",
+      "Dies",
+      "Lubricants",
+      "Grease",
+      "Industrial Adhesives",
+      "Sealants",
+      "Cleaning Chemicals",
+      "Maintenance Supplies"
     ],
-  },
+    "productCount": 13
+  }
 ];
 
 export const products: Product[] = [
-
-  // ════════════════════════════════════════════════
-  // FASTENERS — specific bolt/nut/washer images
-  // ════════════════════════════════════════════════
   {
-    id: "FA-HB-001",
-    name: "Hex Bolt",
-    productCode: "HB-M12-80-GR88",
-    brand: "Unbrako",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.6, reviewCount: 210,
-    images: [
-      "https://res.cloudinary.com/rsc/image/upload/F5080994-01",
+    "id": "FA-001",
+    "name": "Hex Bolts",
+    "productCode": "HEXBOLTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 78,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hex%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
     ],
-    description: "High tensile Grade 8.8 hex bolts to IS 1364 / DIN 931. For structural steel, heavy machinery, and high-load applications. Available M6 to M64, 20 to 300 mm length.",
-    applications: ["Structural steelwork","Heavy machinery assembly","Bridge construction","Flanged pipe joints","Equipment mounting"],
-    specifications: { "Standard": "IS 1364 / DIN 931", "Grade": "8.8 High Tensile", "Material": "Medium Carbon Steel", "Size Range": "M6 to M64", "Length": "20 to 300 mm", "Finish": "Zinc Plated / HDG" },
-    features: ["Grade 8.8 high tensile","Full and partial thread","Hot-dip galvanized available","Custom lengths on request"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
-  },
-  {
-    id: "FA-AB-002",
-    name: "Allen Bolt",
-    productCode: "AB-M10-40-GR129",
-    brand: "Unbrako",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.7, reviewCount: 178,
-    images: [
-      "https://m.media-amazon.com/images/I/71VRkGuP6PL.jpg",
+    "description": "High-quality Hex Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
     ],
-    description: "Grade 12.9 alloy steel socket head cap screws to DIN 912 / ISO 4762. Black oxide finish for precision machinery and high-stress joints.",
-    applications: ["CNC machine tool assembly","Precision engineering","Mould and die clamping","Automotive assembly","Hydraulic block mounting"],
-    specifications: { "Standard": "DIN 912 / ISO 4762", "Grade": "12.9 Alloy Steel", "Material": "Alloy Steel 42CrMo4", "Size Range": "M3 to M36", "Finish": "Black Oxide", "Drive": "Hexagon Socket" },
-    features: ["Grade 12.9 highest strength","Black oxide finish","Precision machined socket","Low-profile head"],
-    datasheetUrl: "", inStock: true,
-  },
-  {
-    id: "FA-CB-003",
-    name: "Carriage Bolt",
-    productCode: "CB-M10-60-ZNPL",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.4, reviewCount: 89,
-    images: [
-      "https://i5.walmartimages.com/seo/Carriage-Bolts-Neck-Carriage-Bolt-Round-Head-Square-Neck-304-Stainless-Steel-M12x35mm-3-pcs_a95c4021-2a1f-4fb7-8734-9cd28bad46e0.86fc4a346cb73a4d344de95adf4f637d.jpeg",
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
     ],
-    description: "MS carriage bolts with domed head and square neck for anti-rotation. Zinc plated. Ideal for timber, wood-to-metal, and agricultural equipment.",
-    applications: ["Timber structures","Agricultural equipment","Park furniture","Conveyor frames","General construction"],
-    specifications: { "Standard": "DIN 603", "Material": "Mild Steel", "Size Range": "M6 to M20", "Length": "20 to 150 mm", "Finish": "Zinc Plated", "Head": "Domed Round" },
-    features: ["Square neck anti-rotation","Domed head clean finish","Zinc plated"],
-    datasheetUrl: "", inStock: true,
+    "inStock": true
   },
   {
-    id: "FA-EB-004",
-    name: "Eye Bolt",
-    productCode: "EB-M12-FORGED-HDG",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.5, reviewCount: 65,
-    images: [
-      "https://m.media-amazon.com/images/I/61Gc7seOa8L.jpg",
+    "id": "FA-002",
+    "name": "Allen Bolts",
+    "productCode": "ALLENBOL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 69,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Allen%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
     ],
-    description: "Forged carbon steel eye bolts to DIN 580 for lifting and rigging. Closed eye, WLL stamped on head. Hot-dip galvanized for outdoor and marine use.",
-    applications: ["Lifting and hoisting","Rigging and tie-down","Marine and offshore","Construction cranes","Cable management"],
-    specifications: { "Standard": "DIN 580", "Material": "Carbon Steel Forged", "Size Range": "M6 to M36", "Finish": "HDG / Zinc Plated", "Eye Type": "Closed Ring" },
-    features: ["Forged one-piece construction","WLL safety marked","Hot-dip galvanized option"],
-    datasheetUrl: "", inStock: true,
-  },
-  {
-    id: "FA-SB-005",
-    name: "Stud Bolt",
-    productCode: "SB-B7-M20-200-2H",
-    brand: "Unbrako",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.8, reviewCount: 92,
-    images: [
-      "https://www.kenenghardware.com/wp-content/uploads/2023/06/stud-bolts.jpg",
+    "description": "High-quality Allen Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
     ],
-    description: "ASTM A193 Grade B7 alloy steel stud bolts with ASTM A194 Grade 2H heavy hex nuts for pressure flanges and high-temperature piping.",
-    applications: ["Pressure flange connections","High-temperature piping","Valve bonnet studs","Pressure vessels","Refinery piping"],
-    specifications: { "Stud Grade": "ASTM A193 B7", "Nut Grade": "ASTM A194 2H", "Size Range": "M12 to M64", "Finish": "Plain / PTFE / HDG", "Standard": "ASME B18.31.2" },
-    features: ["ASTM A193 B7 certified","Supplied with 2H nuts","PTFE coating available","High temp rated"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
-  },
-  {
-    id: "FA-HN-006",
-    name: "Hex Nut",
-    productCode: "HN-M16-GR8-ZNPL",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.5, reviewCount: 145,
-    images: [
-      "https://tse1.mm.bing.net/th/id/OIP.RAB55815mx9Pxjp7tpcx4AHaHa?pid=Api&P=0&h=180",
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
     ],
-    description: "Grade 8 hex nuts zinc plated to DIN 934 / IS 1363. For structural bolting and heavy machinery. Available M4 to M64, SS 304/316 grades also stocked.",
-    applications: ["Structural bolting","Heavy machinery","Flanged connections","Equipment assembly","Automotive"],
-    specifications: { "Standard": "DIN 934 / IS 1363", "Grade": "Grade 8", "Material": "Medium Carbon Steel", "Size Range": "M4 to M64", "Finish": "Zinc Plated" },
-    features: ["Grade 8 strength","SS 304/316 available","All sizes in stock"],
-    datasheetUrl: "", inStock: true,
+    "inStock": true
   },
   {
-    id: "FA-NN-007",
-    name: "Nylock Nut",
-    productCode: "NN-M10-SS304",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.5, reviewCount: 132,
-    images: [
-      "https://tse1.mm.bing.net/th/id/OIP.nBy0it76zg8qlRKR8inCyAHaGX?pid=Api&P=0&h=180",
+    "id": "FA-003",
+    "name": "Carriage Bolts",
+    "productCode": "CARRIAGE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 5,
+    "reviewCount": 33,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Carriage%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
     ],
-    description: "SS 304 nylock (nylon insert) lock nuts to DIN 985. Vibration-resistant — nylon insert prevents loosening under dynamic loads.",
-    applications: ["Vibrating machinery","Automotive assembly","Fan and pump mounting","Conveyor systems","Dynamic load joints"],
-    specifications: { "Standard": "DIN 985", "Material": "SS 304 A2", "Size Range": "M4 to M30", "Insert": "Nylon PA66", "Thread": "Coarse ISO Metric" },
-    features: ["Vibration-proof","SS 304 corrosion resistance","No extra locking washer needed"],
-    datasheetUrl: "", inStock: true, tag: "new",
-  },
-  {
-    id: "FA-WA-008",
-    name: "Wedge Anchor",
-    productCode: "WA-HST3-M12-75-CS",
-    brand: "Hilti",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.7, reviewCount: 104,
-    images: [
-      "https://cdn.shopify.com/s/files/1/0106/5851/2932/products/ankr_tite_stainless-316_wedge-anchor_mechanical_anchors@2x.png?v=1573688971",
+    "description": "High-quality Carriage Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
     ],
-    description: "Hilti HST3 wedge anchor for heavy-duty fixing in solid concrete. ETA approved for cracked and uncracked concrete structural applications.",
-    applications: ["Structural steel to concrete","Machine bases","Racking and shelving","Safety barriers","Overhead fixing"],
-    specifications: { "Type": "Torque-Controlled Wedge Anchor", "Material": "Carbon Steel Zinc Plated", "Diameter": "M8 to M24", "Embedment": "60 to 170 mm", "ETA": "ETA 98/0001" },
-    features: ["ETA approved structural","Works in cracked concrete","Quick torque installation"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
-  },
-  {
-    id: "FA-ST-009",
-    name: "Self Tapping Screw",
-    productCode: "STS-PH-4X25-ZNPL",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.3, reviewCount: 112,
-    images: [
-      "https://punchlistzero.com/wp-content/uploads/2021/08/self-tapping-screws.jpg",
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
     ],
-    description: "Zinc plated pan head Phillips self-tapping screws (Type A) for sheet metal, plastic, and light timber. Hardened carbon steel with sharp point.",
-    applications: ["Sheet metal fabrication","Electrical enclosures","Plastic fixing","Light timber","HVAC ducting"],
-    specifications: { "Type": "Type A Self Tapping", "Head": "Pan Head Phillips", "Material": "Carbon Steel Hardened", "Size": "No.4 to No.14", "Finish": "Zinc Plated" },
-    features: ["Sharp point no pre-drilling","Hardened for sheet metal","Multiple head styles"],
-    datasheetUrl: "", inStock: true,
+    "inStock": true
   },
   {
-    id: "FA-PW-010",
-    name: "Plain & Spring Washers",
-    productCode: "WS-M12-PLAIN-SPRING-SET",
-    brand: "Fastwell",
-    categorySlug: "fasteners", categoryName: "Fasteners",
-    price: 0, rating: 4.3, reviewCount: 198,
-    images: [
-      "https://5.imimg.com/data5/SELLER/Default/2021/7/NY/XV/TG/157452/plain-spring-washers-1000x1000.jpg",
+    "id": "FA-004",
+    "name": "Eye Bolts",
+    "productCode": "EYEBOLTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 27,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Eye%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
     ],
-    description: "Complete washer range including plain (Form A/B/C), spring lock, star, and fender washers in zinc plated MS. Stainless steel 304 available.",
-    applications: ["Bolt load distribution","Vibration locking","General assembly","Structural bolting","Machine assembly"],
-    specifications: { "Types": "Plain / Spring / Star / Fender", "Standard": "DIN 9021 / DIN 127 / IS 2016", "Material": "Mild Steel", "Size Range": "M4 to M36", "Finish": "Zinc Plated" },
-    features: ["Full washer range stocked","SS 304 available","All metric sizes","Bulk packs available"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // RAW MATERIALS
-  // ════════════════════════════════════════════════
-  {
-    id: "RM-MSP-001",
-    name: "MS Plate",
-    productCode: "MSP-IS2062-E250-10MM",
-    brand: "SAIL / TATA Steel",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.5, reviewCount: 95,
-    images: ["https://5.imimg.com/data5/SELLER/Default/2024/1/375585807/HA/HE/MU/6133115/tata-ms-plate-1000x1000.jpg"],
-    description: "Mild steel plates to IS 2062 Grade E250 for structural fabrication, pressure vessels, and heavy engineering. Thickness 5 mm to 100 mm. MTC provided.",
-    applications: ["Structural fabrication","Pressure vessels","Machinery frames","Shipbuilding","General engineering"],
-    specifications: { "Standard": "IS 2062 Grade E250", "Yield Strength": "250 MPa min", "Tensile Strength": "410 to 540 MPa", "Thickness": "5 to 100 mm", "Width": "Up to 2500 mm" },
-    features: ["IS 2062 certified","MTC provided","Cut to size available","SAIL/TATA primary material"],
-    datasheetUrl: "", inStock: true,
+    "description": "High-quality Eye Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-MSR-002",
-    name: "MS Round Bar & Square Bar",
-    productCode: "MSBAR-IS2062-25MM-6M",
-    brand: "SAIL",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.4, reviewCount: 78,
-    images: ["https://5.imimg.com/data5/ANDROID/Default/2020/10/DX/AY/TS/29197094/product-jpeg-500x500.jpg"],
-    description: "IS 2062 mild steel round bars and square bars for shafts, axles, pins, and general engineering. Hot rolled, 10 mm to 200 mm diameter, 6 metre standard lengths.",
-    applications: ["Shafts and axles","Pins and dowels","General machining","Welding fabrication","Structural use"],
-    specifications: { "Standard": "IS 2062", "Diameter/Size": "10 to 200 mm", "Length": "6 metres standard", "Surface": "Hot Rolled Mill Finish", "Grade": "E250" },
-    features: ["Round and square bars stocked","6 m standard lengths","Cut to size available","MTC provided"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-005",
+    "name": "U-Bolts",
+    "productCode": "UBOLTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 186,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=U-Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality U-Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-MSPipe-003",
-    name: "MS ERW Pipe",
-    productCode: "MSPIPE-ERW-50NB-MED",
-    brand: "Tata Structura",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.5, reviewCount: 82,
-    images: ["https://www.indusroof.com/pub/media/catalog/category/MS-Pipe5.png"],
-    description: "ERW mild steel pipes to IS 1239 Medium grade for water, gas, and structural applications. 15 NB to 150 NB in light, medium, and heavy classes.",
-    applications: ["Water and gas distribution","Scaffolding","Hydraulic lines","Air and steam lines","Fence posts"],
-    specifications: { "Standard": "IS 1239 Medium Grade", "Size Range": "15 NB to 150 NB", "Length": "6 metres", "Type": "ERW Welded" },
-    features: ["IS 1239 certified","ERW welded","Light/Medium/Heavy grades","Galvanized available"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-006",
+    "name": "Foundation Bolts",
+    "productCode": "FOUNDATI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 131,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Foundation%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Foundation Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-ANGLE-004",
-    name: "MS Channels, Angles & I-Beams",
-    productCode: "MSANGLE-IS2062-50X50X5",
-    brand: "SAIL",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.4, reviewCount: 61,
-    images: ["https://5.imimg.com/data5/SELLER/Default/2023/9/341650365/KE/XN/AN/561592/ms-angle-channel-beam-flats-1000x1000.jpg"],
-    description: "Full range of MS structural sections to IS 2062 — equal and unequal angles, channels (ISMC), and I-beams (ISMB). 6 metre standard lengths, cut to size available.",
-    applications: ["Structural trusses","Machinery guards","Shelving and racking","Conveyor frames","General fabrication"],
-    specifications: { "Standard": "IS 2062 / IS 808", "Sections": "Angles / Channels / I-Beams", "Size Range": "25x25x3 to 200x200x25 mm", "Length": "6 metres" },
-    features: ["Full section range stocked","Cut to length available","Channel and I-beam stocked","IS 808 certified sections"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-007",
+    "name": "Flange Bolts",
+    "productCode": "FLANGEBO-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 89,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Flange%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Flange Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-SSS-005",
-    name: "SS Sheets, Pipes & Rods",
-    productCode: "SSS-304-2B-2MM",
-    brand: "Jindal Stainless",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.7, reviewCount: 67,
-    images: ["https://5.imimg.com/data5/YO/JR/MY-14594846/stainless-steel-rods.jpg"],
-    description: "Complete SS range — Jindal SS 202, 304, 316 sheets (2B/No.4/BA/Mirror), seamless and ERW pipes, and round bars. MTC with every supply.",
-    applications: ["Food processing equipment","Pharmaceutical manufacturing","Chemical plant","Architectural cladding","Kitchen equipment"],
-    specifications: { "Grades": "SS 202 / 304 / 316", "Standards": "ASTM A240 / IS 6911 / ASTM A312", "Forms": "Sheets / Pipes / Rods", "Finishes": "2B / No.4 / BA / Mirror", "Thickness": "0.5 to 12 mm" },
-    features: ["Jindal Stainless primary","MTC with supply","All grades and finishes","Laser cutting available"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "FA-008",
+    "name": "Stud Bolts",
+    "productCode": "STUDBOLT-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 5,
+    "reviewCount": 55,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Stud%20Bolts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Stud Bolts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-ALU-006",
-    name: "Aluminium Sheets & Rods",
-    productCode: "ALUSHEET-5052-H32-3MM",
-    brand: "Hindalco",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.5, reviewCount: 43,
-    images: ["https://i.etsystatic.com/27161990/r/il/7af648/2838177505/il_fullxfull.2838177505_r75m.jpg"],
-    description: "Hindalco aluminium alloy sheets (5052-H32, 6061-T6) and round rods for marine, automotive, and general fabrication. Mill finish and anodized options.",
-    applications: ["Marine and boat building","Automotive panels","Fuel tanks","Electrical enclosures","Sheet metal work"],
-    specifications: { "Alloys": "5052-H32 / 6061-T6", "Standard": "ASTM B209 / IS 737", "Thickness": "1 to 12 mm", "Temper": "H32 / T6", "Finish": "Mill Finish" },
-    features: ["Hindalco primary material","Excellent corrosion resistance","5052/6061/7075 available","Cut to size"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-009",
+    "name": "Hex Nuts",
+    "productCode": "HEXNUTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 113,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hex%20Nuts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Hex Nuts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
   },
   {
-    id: "RM-CW-007",
-    name: "Copper Wires & Bus Bars",
-    productCode: "CW-EC-4SWG-BARE",
-    brand: "Hindalco",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.6, reviewCount: 54,
-    images: ["https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&q=80"],
-    description: "EC grade 99.9% pure copper wire (bare annealed) and flat bus bars for motor winding, earthing, and electrical bus bar fabrication. All SWG gauges and standard bus bar sections stocked.",
-    applications: ["Motor and transformer winding","Earthing systems","Bus bar fabrication","Overhead lines","Lightning protection"],
-    specifications: { "Grade": "EC (Electrical Conductivity)", "Purity": "99.9% Cu min", "Conductivity": "100% IACS min", "Standard": "IS 8130 / ASTM B3", "Forms": "Wire / Bus Bar" },
-    features: ["99.9% pure copper","Soft annealed","Tinned finish available","Standard bus bar sections stocked"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-010",
+    "name": "Nyloc Nuts",
+    "productCode": "NYLOCNUT-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 77,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Nyloc%20Nuts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Nyloc Nuts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "RM-BRASS-008",
-    name: "Brass & Bronze Components",
-    productCode: "BRASS-CZ121-25MM-3M",
-    brand: "Hira",
-    categorySlug: "raw-materials", categoryName: "Raw Materials",
-    price: 0, rating: 4.6, reviewCount: 39,
-    images: ["https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=800&q=80"],
-    description: "CZ121 (BS2874) free machining brass round bars and bronze rods for turned parts, valves, fittings, and electrical components. Excellent machinability.",
-    applications: ["Turned parts and connectors","Valve bodies","Electrical terminals","Decorative components","Plumbing fittings"],
-    specifications: { "Alloy": "CZ121 60/40 Brass", "Standard": "BS 2874", "Diameter": "6 to 100 mm", "Length": "3 metres", "Finish": "Bright Drawn", "Cu Content": "59 to 62%" },
-    features: ["Free machining grade","Bright drawn finish","Bronze also available","Cut to size service"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // MECHANICAL COMPONENTS
-  // ════════════════════════════════════════════════
-  {
-    id: "MC-BB-001",
-    name: "Ball Bearings",
-    productCode: "DGBB-6205-ZZ-SKF",
-    brand: "SKF",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.9, reviewCount: 312,
-    images: ["https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&q=80"],
-    description: "SKF 6205 ZZ deep groove ball bearing — pre-greased, metal shielded. Full range 6000 to 6400 series in stock. Roller bearings (NU/NJ) also available.",
-    applications: ["Electric motors","Pumps and fans","Conveyor rollers","Agricultural equipment","Gearboxes"],
-    specifications: { "Type": "Deep Groove Ball Bearing", "Bore": "25 mm", "OD": "52 mm", "Width": "15 mm", "Dynamic Load": "14.0 kN", "Speed": "15,000 rpm" },
-    features: ["SKF genuine bearing","Pre-greased maintenance-free","Full 6000 to 6400 series stocked","Roller bearings also available"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "FA-011",
+    "name": "Dome Nuts",
+    "productCode": "DOMENUTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 185,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Dome%20Nuts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Dome Nuts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "MC-PB-002",
-    name: "Pillow Block Bearing",
-    productCode: "PBB-UCP205-SKF",
-    brand: "SKF",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.8, reviewCount: 145,
-    images: ["https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&q=80"],
-    description: "SKF UCP205 pillow block bearing unit with cast iron housing and self-aligning insert. For conveyor shafts, fans, and general industrial shafting.",
-    applications: ["Conveyor shafts","Agricultural machinery","Fan shafts","Mixer drives","General shafting"],
-    specifications: { "Designation": "UCP205", "Shaft": "25 mm", "Housing": "Cast Iron", "Sealing": "Triple Lip Seal", "Self-aligning": "Yes" },
-    features: ["Self-aligning insert","Cast iron housing","Triple lip seal","Full UCP/UCFL/UCFC range"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-012",
+    "name": "Flange Nuts",
+    "productCode": "FLANGENU-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 126,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Flange%20Nuts%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Flange Nuts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
   },
   {
-    id: "MC-GB-003",
-    name: "Industrial Gearbox",
-    productCode: "WGB-HW50-RATIO20",
-    brand: "Elecon",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.7, reviewCount: 76,
-    images: ["https://images.unsplash.com/photo-1565679099000-7f34d5c52a52?w=800&q=80"],
-    description: "Elecon helical worm gearbox, foot/flange/shaft mounted. Ratios 5:1 to 100:1, power 0.12 to 22 kW. Compact cast iron housing.",
-    applications: ["Conveyors","Agitators and mixers","Packaging machinery","Material handling","Food processing"],
-    specifications: { "Type": "Helical Worm", "Mounting": "Foot / Flange / Shaft", "Ratio": "5:1 to 100:1", "Power": "0.12 to 22 kW", "Torque": "Up to 2800 Nm" },
-    features: ["High efficiency helical stage","Multiple mounting configs","IEC flange motor mounting","Food-grade oil option"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-013",
+    "name": "Plain Washers",
+    "productCode": "PLAINWAS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 173,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Plain%20Washers%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Plain Washers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "MC-VB-004",
-    name: "V Belts & Timing Belts",
-    productCode: "VB-A50-GATES",
-    brand: "Gates",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.6, reviewCount: 145,
-    images: ["https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&q=80"],
-    description: "Gates classical V belts (A/B/C/D/E sections) and HTD timing belts for industrial drives. EPDM compound with aramid cord. Oil and heat resistant.",
-    applications: ["Fan and blower drives","Compressor drives","CNC machine drives","Agricultural equipment","HVAC"],
-    specifications: { "V Belt Section": "A/B/C/D/E Classical", "Timing Belt": "HTD 3M/5M/8M/14M", "Material": "EPDM/Neoprene", "Cord": "Aramid/Fiberglass", "Temp": "-30 to +70 deg C" },
-    features: ["Gates OEM quality","Antistatic compound","Heat and oil resistant","Full section range stocked"],
-    datasheetUrl: "", inStock: true, tag: "new",
+    "id": "FA-014",
+    "name": "Spring Washers",
+    "productCode": "SPRINGWA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 130,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Spring%20Washers%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Spring Washers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "MC-RC-005",
-    name: "Roller Chain",
-    productCode: "RC-08B-SIMPLEX-RENOLD",
-    brand: "Renold",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.8, reviewCount: 119,
-    images: ["https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&q=80"],
-    description: "Renold roller chains to BS/ISO 606. 06B to 24B simplex and duplex. For conveyor drives, agricultural machinery, and industrial power transmission.",
-    applications: ["Conveyor drives","Agricultural machinery","Industrial power transmission","Motorcycle and ATV","Lifting equipment"],
-    specifications: { "Standard": "BS/ISO 606", "Range": "06B to 24B Simplex / Duplex", "08B Pitch": "12.7 mm", "08B Breaking Load": "17.8 kN min" },
-    features: ["Renold genuine chain","BS/ISO 606 certified","Simplex/Duplex/Triplex","Connecting links supplied"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-015",
+    "name": "Star Washers",
+    "productCode": "STARWASH-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 86,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Star%20Washers%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Star Washers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "MC-CP-006",
-    name: "Couplings, Sprockets & Pulleys",
-    productCode: "COUP-L090-19MM-25MM",
-    brand: "Lovejoy",
-    categorySlug: "mechanical-components", categoryName: "Mechanical Components",
-    price: 0, rating: 4.6, reviewCount: 73,
-    images: ["https://images.unsplash.com/photo-1565679099000-7f34d5c52a52?w=800&q=80"],
-    description: "Full range of power transmission components — Lovejoy jaw couplings, taper lock sprockets, and cast iron V belt pulleys. For pump, compressor, and conveyor drives.",
-    applications: ["Pump to motor drives","Compressor drives","Fan drives","Conveyor drives","General power transmission"],
-    specifications: { "Couplings": "Jaw / Gear / Disc Type", "Sprockets": "Taper Lock / Pilot Bore 06B to 24B", "Pulleys": "SPA/SPB/SPC Taper Lock V Belt", "Materials": "Cast Iron / Steel" },
-    features: ["Full power transmission range","Taper lock hub system","Lovejoy genuine couplings","Custom bore available"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // ELECTRICAL & AUTOMATION
-  // ════════════════════════════════════════════════
-  {
-    id: "EA-PC-001",
-    name: "Industrial Power Cables",
-    productCode: "PC-4CX16-XLPE-SWA-1100V",
-    brand: "Polycab",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.8, reviewCount: 98,
-    images: ["https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&q=80"],
-    description: "Polycab XLPE insulated SWA power cables for 1100V industrial power distribution and underground installations. 1.5 to 400 sqmm, 2 to 4 cores.",
-    applications: ["Industrial power distribution","Underground cable laying","Substation feeders","MCC to motor","Infrastructure projects"],
-    specifications: { "Voltage": "1100 V", "Insulation": "XLPE", "Armour": "SWA", "Sheath": "PVC ST2", "Standard": "IS 7098 Part 1", "Range": "1.5 to 400 sq mm" },
-    features: ["Polycab ISI marked","XLPE high current capacity","SWA mechanical protection","Direct burial suitable"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "FA-016",
+    "name": "Fender Washers",
+    "productCode": "FENDERWA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 113,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Fender%20Washers%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Fender Washers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "EA-CC-002",
-    name: "Control Cables & Batteries",
-    productCode: "CC-10CX1P5-FRLS-500V",
-    brand: "Finolex",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.7, reviewCount: 62,
-    images: ["https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=800&q=80"],
-    description: "Finolex FRLS multicore control cables for PLC/DCS panel wiring and instrumentation. 2 to 61 cores, 0.5 to 4 sqmm. Industrial batteries (VRLA/SMF) also available.",
-    applications: ["PLC and DCS panel wiring","Instrumentation signals","MCC panel wiring","Control circuits","Industrial battery backup"],
-    specifications: { "Cores": "2 to 61 Core", "Size": "0.5 to 4 sq mm", "Voltage": "500 V", "Insulation": "FRLS PVC", "Standard": "IS 5831 / BS 6231" },
-    features: ["FRLS low smoke","Finolex ISI certified","Screened/unscreened","Batteries also available"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-017",
+    "name": "Self Tapping Screws",
+    "productCode": "SELFTAPP-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 81,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Self%20Tapping%20Screws%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Self Tapping Screws designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "EA-CT-003",
-    name: "Cable Trays, Glands & Insulation Tapes",
-    productCode: "CT-PERF-GI-100X50",
-    brand: "Niedax",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.6, reviewCount: 71,
-    images: ["https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80"],
-    description: "Complete cable management system — GI perforated cable trays (50 to 600mm wide), brass and nylon cable glands (PG7 to PG48), and PVC/self-amalgamating insulation tapes.",
-    applications: ["Industrial cable routing","Substation cable management","Panel wiring","Data centre routing","Power distribution"],
-    specifications: { "Tray Material": "GI Hot Dip Galvanized", "Tray Width": "50 to 600 mm", "Cable Glands": "PG7 to PG48 Brass/Nylon", "Tape": "PVC / Self-Amalgamating" },
-    features: ["HDG trays for corrosion resistance","Full gland range brass and nylon","Matching bends and tees","Self-amalgamating tapes stocked"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-018",
+    "name": "Self Drilling Screws",
+    "productCode": "SELFDRIL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 82,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Self%20Drilling%20Screws%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Self Drilling Screws designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "EA-PNL-004",
-    name: "MCC, PCC & PLC Panels",
-    productCode: "PLC-S71200-8DI-8DO",
-    brand: "Siemens / ABB",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.8, reviewCount: 41,
-    images: ["https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80"],
-    description: "Custom-built electrical panels — Motor Control Centres (MCC), Power Control Centres (PCC), PLC automation panels with Siemens S7-1200/1500 or Allen Bradley, and HMI touchscreens. Factory wired, tested, and documented.",
-    applications: ["Motor control centres","Power distribution panels","PLC machine automation","SCADA integration","Process plant control"],
-    specifications: { "MCC/PCC": "ACB/MCCB/Contactor based", "PLC": "Siemens S7-1200/1500 / Allen Bradley", "HMI": "7 inch to 21 inch Touchscreen", "Comms": "Profinet / Modbus / Ethernet", "IP": "IP54 / IP65" },
-    features: ["Factory wired and tested","Siemens/ABB genuine components","Custom I/O configuration","Full test certificate and documentation"],
-    datasheetUrl: "", inStock: true, tag: "new",
+    "id": "FA-019",
+    "name": "Wedge Anchors",
+    "productCode": "WEDGEANC-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 200,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Wedge%20Anchors%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Wedge Anchors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "EA-MOT-005",
-    name: "Motors & Drives",
-    productCode: "ACM-3PH-7P5KW-IE2",
-    brand: "ABB / Crompton",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.9, reviewCount: 88,
-    images: ["https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80"],
-    description: "Complete motor and drive range — Crompton/ABB IE2/IE3 AC induction motors (0.18 to 315 kW), DC motors, servo motors with drives, and ABB/Siemens VFD drives (0.37 to 250 kW) for energy saving and speed control.",
-    applications: ["Pump and fan drives","Conveyor systems","Compressor drives","CNC spindle drives","HVAC and energy saving"],
-    specifications: { "AC Motors": "IE2/IE3 0.18 to 315 kW, 415V 3Ph", "VFD Drives": "ABB ACS310/580 0.37 to 250 kW", "Servo Motors": "50W to 7.5 kW with Drive", "DC Motors": "0.18 to 37 kW", "IP": "IP55 Standard" },
-    features: ["IE2/IE3 energy efficiency","ABB/Crompton genuine motors","VFD energy savings up to 50%","Full range in stock"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "FA-020",
+    "name": "Chemical Anchors",
+    "productCode": "CHEMICAL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 41,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Chemical%20Anchors%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Chemical Anchors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "EA-TRF-006",
-    name: "Transformers & Switchgear",
-    productCode: "TRF-3PH-100KVA-415V",
-    brand: "Siemens / Kirloskar",
-    categorySlug: "electrical-automation", categoryName: "Electrical & Automation",
-    price: 0, rating: 4.7, reviewCount: 35,
-    images: ["https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80"],
-    description: "Industrial transformers (5 kVA to 2000 kVA, dry/oil cooled) and switchgear — MCBs, MCCBs, ACBs, contactors, overload relays from Siemens, ABB, Schneider.",
-    applications: ["Power distribution","Industrial step-down","Motor starting switchgear","Panel protection","Site power supply"],
-    specifications: { "Transformers": "5 kVA to 2000 kVA, Dry/Oil", "MCBs": "6A to 63A, Siemens/ABB", "MCCBs": "63A to 1600A", "ACBs": "Up to 6300A", "Contactors": "9A to 820A" },
-    features: ["Siemens/ABB/Schneider genuine","Full switchgear range","Dry type and oil cooled transformers","CPRI tested"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // HYDRAULIC & PNEUMATIC
-  // ════════════════════════════════════════════════
-  {
-    id: "HP-HC-001",
-    name: "Hydraulic Cylinders & Power Packs",
-    productCode: "HC-DA-63MM-200MM-160BAR",
-    brand: "Wipro Infrastructure",
-    categorySlug: "hydraulic-pneumatic", categoryName: "Hydraulic & Pneumatic",
-    price: 0, rating: 4.7, reviewCount: 55,
-    images: ["https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=800&q=80"],
-    description: "Double and single acting hydraulic cylinders (tie rod and welded type, bore 25 to 400 mm, pressure up to 350 bar) and compact hydraulic power packs with reservoir, pump, motor, and valve assembly.",
-    applications: ["Hydraulic presses","Scissor lifts","Clamping and fixturing","Injection moulding","Material handling"],
-    specifications: { "Type": "Double/Single Acting Tie Rod/Welded", "Bore Range": "25 to 400 mm", "Pressure": "Up to 350 bar", "Rod": "Chrome Plated Ground", "Seals": "Hallite / Parker" },
-    features: ["Custom bore and stroke","Chrome-plated piston rod","Complete power packs available","Hallite seals long life"],
-    datasheetUrl: "", inStock: true,
+    "id": "FA-021",
+    "name": "Sleeve Anchors",
+    "productCode": "SLEEVEAN-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "fasteners",
+    "categoryName": "Fasteners",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 21,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Sleeve%20Anchors%20Fasteners%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Sleeve Anchors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "HP-HP-002",
-    name: "Hydraulic Pumps",
-    productCode: "HP-PARKER-PGP020-15CC",
-    brand: "Parker",
-    categorySlug: "hydraulic-pneumatic", categoryName: "Hydraulic & Pneumatic",
-    price: 0, rating: 4.8, reviewCount: 48,
-    images: ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"],
-    description: "Parker and Bosch Rexroth gear pumps (2 to 100 cc/rev, up to 250 bar) and vane pumps for industrial hydraulic systems and mobile machinery.",
-    applications: ["Hydraulic power units","Mobile hydraulics","Machine tool hydraulics","Agricultural hydraulics","Industrial presses"],
-    specifications: { "Types": "External Gear / Vane Pump", "Displacement": "2 to 100 cc/rev", "Pressure": "Up to 250 bar", "Speed": "500 to 3500 rpm", "Brands": "Parker / Bosch Rexroth" },
-    features: ["Parker and Bosch Rexroth genuine","Wide displacement range","Low noise operation","SAE and BSP ports"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-022",
+    "name": "MS Plates",
+    "productCode": "MSPLATES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 55,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=MS%20Plates%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality MS Plates designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "HP-AC-003",
-    name: "Air Compressors",
-    productCode: "AC-ELGI-10HP-8BAR",
-    brand: "Elgi",
-    categorySlug: "hydraulic-pneumatic", categoryName: "Hydraulic & Pneumatic",
-    price: 0, rating: 4.8, reviewCount: 72,
-    images: ["https://images.unsplash.com/photo-1565679099000-7f34d5c52a52?w=800&q=80"],
-    description: "Elgi rotary screw compressors (5 to 200 HP, 7 to 13 bar) with integrated dryer and auto-drain. Also single and double stage piston compressors for workshop use.",
-    applications: ["Pneumatic tool operation","Spray painting and sandblasting","CNC machine air","Workshop compressed air","Pneumatic conveying"],
-    specifications: { "Types": "Rotary Screw / Piston", "Power Range": "5 HP to 200 HP", "Pressure": "7 to 13 bar", "FAD": "42 to 1200 CFM", "Noise": "From 62 dB(A)" },
-    features: ["Elgi genuine screw element","Integrated dryer and auto-drain","VSD option for energy saving","Remote monitoring capability"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "RM-023",
+    "name": "MS Sheets",
+    "productCode": "MSSHEETS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 72,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=MS%20Sheets%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality MS Sheets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "HP-PC-004",
-    name: "Pneumatic Cylinders",
-    productCode: "PC-SMC-CD85N-50-200",
-    brand: "SMC",
-    categorySlug: "hydraulic-pneumatic", categoryName: "Hydraulic & Pneumatic",
-    price: 0, rating: 4.9, reviewCount: 134,
-    images: ["https://images.unsplash.com/photo-1565679099000-7f34d5c52a52?w=800&q=80"],
-    description: "SMC and Festo pneumatic cylinders — double and single acting, bore 12 to 320 mm, stroke up to 2000 mm. Auto-switch compatible, stainless steel rod, all mounting styles.",
-    applications: ["Factory automation","Pick and place","Clamping fixtures","Packaging machinery","Assembly lines"],
-    specifications: { "Brands": "SMC / Festo", "Types": "Double / Single Acting", "Bore Range": "12 to 320 mm", "Stroke": "Up to 2000 mm", "Pressure": "0.1 to 1.0 MPa" },
-    features: ["SMC and Festo genuine","Auto-switch compatible","Stainless steel rod","Custom bore and stroke"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-024",
+    "name": "MS Rods",
+    "productCode": "MSRODS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 196,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=MS%20Rods%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality MS Rods designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "HP-FRL-005",
-    name: "FRL Units, Solenoid Valves & Hoses",
-    productCode: "FRL-SMC-AC30-03-SET",
-    brand: "SMC / Festo",
-    categorySlug: "hydraulic-pneumatic", categoryName: "Hydraulic & Pneumatic",
-    price: 0, rating: 4.7, reviewCount: 96,
-    images: ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"],
-    description: "Complete pneumatic accessories — SMC/Festo FRL units (filter-regulator-lubricator), solenoid valves (2/2, 3/2, 5/2, 5/3 way, 12 to 240V), hydraulic hoses (SAE 100R1/R2), and PU pneumatic tubing.",
-    applications: ["Pneumatic air preparation","Cylinder control","Hydraulic hose assemblies","Machine pneumatics","Process automation"],
-    specifications: { "FRL": "1/8 to 1 inch, 5 micron filter", "Solenoid Valves": "2/2 3/2 5/2 5/3 way, 12 to 240V", "Hoses": "SAE 100R1/R2 1/4 to 2 inch", "PU Tubing": "4mm to 16mm OD" },
-    features: ["SMC/Festo genuine components","Full valve range stocked","Custom hose assemblies","PU tube in 100m rolls"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // INDUSTRIAL SAFETY
-  // ════════════════════════════════════════════════
-  {
-    id: "IS-SH-001",
-    name: "Safety Helmets",
-    productCode: "SH-KARAM-PN540",
-    brand: "Karam",
-    categorySlug: "industrial-safety", categoryName: "Industrial Safety",
-    price: 0, rating: 4.7, reviewCount: 289,
-    images: ["https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=800&q=80"],
-    description: "Karam PN540 HDPE Type II safety helmets, ISI marked to IS 2925. Ratchet adjustment, 4-point textile harness. Available in white, orange, yellow, red, blue.",
-    applications: ["Construction sites","Oil and gas plants","Steel plants","Mining operations","General industrial"],
-    specifications: { "Standard": "IS 2925 ISI Marked", "Material": "HDPE", "Type": "Type I and II", "Suspension": "4-Point + Ratchet", "Electrical": "Class E 20,000V" },
-    features: ["ISI marked IS 2925","Ratchet quick adjustment","UV-stabilised shell","Earmuff and visor accessory slots"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "RM-025",
+    "name": "Round Bars",
+    "productCode": "ROUNDBAR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 150,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Round%20Bars%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Round Bars designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "IS-GL-002",
-    name: "Safety Gloves & Goggles",
-    productCode: "GL-CUT5-HPPE-L",
-    brand: "Honeywell / 3M",
-    categorySlug: "industrial-safety", categoryName: "Industrial Safety",
-    price: 0, rating: 4.8, reviewCount: 198,
-    images: ["https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80"],
-    description: "Full PPE range — Honeywell cut-resistant Level 5 gloves (EN388), 3M chemical splash anti-fog goggles (ANSI Z87.1), welding gloves, and rubber hand gloves for electrical work.",
-    applications: ["Sheet metal handling","Chemical handling","Welding operations","Electrical work","Laboratory use"],
-    specifications: { "Cut Gloves": "EN388 Level 5 HPPE Knit + PU Palm", "Goggles": "ANSI Z87.1 / EN166 Anti-fog", "Welding Gloves": "EN12477 Type B Split Leather" },
-    features: ["Honeywell and 3M genuine","EN388 Level 5 cut protection","Anti-fog goggles OTG compatible","Full PPE range available"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-026",
+    "name": "Square Bars",
+    "productCode": "SQUAREBA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 140,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Square%20Bars%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Square Bars designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "IS-SS-003",
-    name: "Safety Shoes & Reflective Jackets",
-    productCode: "SS-S3-COMPOSITE-TOE",
-    brand: "Karam / 3M",
-    categorySlug: "industrial-safety", categoryName: "Industrial Safety",
-    price: 0, rating: 4.7, reviewCount: 234,
-    images: ["https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800&q=80"],
-    description: "EN ISO 20345 S3 rated safety shoes with composite toe cap, anti-penetration midsole (Karam). High-visibility EN ISO 20471 Class 2 and 3 reflective jackets (3M Scotchlite tape).",
-    applications: ["Construction sites","Manufacturing plants","Warehouses","Oil and gas facilities","Logistics and material handling"],
-    specifications: { "Safety Shoes": "EN ISO 20345 S3, Composite Toe", "Reflective Jackets": "EN ISO 20471 Class 2/3", "Sizes": "Shoes 6-12 UK, Jackets S-XXXL" },
-    features: ["Composite non-metallic toe","S3 anti-penetration midsole","3M Scotchlite reflective tape","Multiple sizes in stock"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-027",
+    "name": "MS Pipes (ERW/Seamless)",
+    "productCode": "MSPIPESE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 39,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=MS%20Pipes%20(ERW%2FSeamless)%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality MS Pipes (ERW/Seamless) designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "IS-FE-004",
-    name: "Fire Extinguishers",
-    productCode: "FE-ABC-DP-6KG",
-    brand: "Ceasefire / Karam",
-    categorySlug: "industrial-safety", categoryName: "Industrial Safety",
-    price: 0, rating: 4.8, reviewCount: 174,
-    images: ["https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=800&q=80"],
-    description: "Ceasefire ABC/CO2 fire extinguishers (1 to 50 kg), fire blankets, smoke detectors. Karam full-body safety harnesses (EN361), lanyards, and self-retracting lifelines for working at height.",
-    applications: ["Industrial fire safety","Working at height","Electrical rooms","Warehouses","High-rise construction"],
-    specifications: { "Extinguishers": "ABC Dry Powder and CO2, 1 to 50 kg, IS 15683", "Harness": "EN361 Full Body, 15 to 140 kg", "Lanyards": "1.5 m and 2 m Energy Absorbing" },
-    features: ["ISI certified extinguishers","ABC and CO2 types","EN361 certified harness","Smoke detectors available"],
-    datasheetUrl: "", inStock: true,
-  },
-
-  // ════════════════════════════════════════════════
-  // CONSUMABLES & MRO
-  // ════════════════════════════════════════════════
-  {
-    id: "CM-WE-001",
-    name: "Welding Electrodes & Rods",
-    productCode: "WE-E6013-3P2MM-5KG",
-    brand: "D&H Secheron / Lincoln",
-    categorySlug: "consumables-mro", categoryName: "Consumables & MRO",
-    price: 0, rating: 4.6, reviewCount: 342,
-    images: ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"],
-    description: "Complete welding consumables — D&H Secheron MMA electrodes (E6013, E7018, E308L, E316L), Lincoln Electric TIG filler wires (ER308L, ER316L, ER70S-6), and MIG wire.",
-    applications: ["General MS fabrication","SS welding","Structural welding","Maintenance and repair","Pipe welding"],
-    specifications: { "MMA Electrodes": "E6013/E7018/E308L/E316L, 2.5 to 5mm", "TIG Wire": "ER308L/ER316L/ER70S-6, 1.6 to 4mm", "MIG Wire": "ER70S-6 0.8 to 1.2mm" },
-    features: ["D&H Secheron and Lincoln genuine","MS and SS grades stocked","All diameters available","5 kg and 25 kg packs"],
-    datasheetUrl: "", inStock: true, tag: "bestseller",
+    "id": "RM-028",
+    "name": "Channels",
+    "productCode": "CHANNELS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 156,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Channels%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Channels designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "CM-GW-002",
-    name: "Grinding Wheels & Cutting Discs",
-    productCode: "GW-NORTON-AO-180X6X32",
-    brand: "Norton / Klingspor",
-    categorySlug: "consumables-mro", categoryName: "Consumables & MRO",
-    price: 0, rating: 4.7, reviewCount: 287,
-    images: ["https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=800&q=80"],
-    description: "Norton aluminium oxide bench grinding wheels (100 to 300 mm) and Klingspor INOX thin cutting discs (1.0 mm, 115/125/230 mm) for angle grinders. No-iron/sulphur/chlorine stainless steel grade.",
-    applications: ["Bench and pedestal grinding","Angle grinder cutting","SS and MS cutting","Tool sharpening","On-site fabrication"],
-    specifications: { "Grinding Wheels": "Norton AO 36/46/60 Grit, 100 to 300mm", "Cutting Discs": "Klingspor 1.0mm INOX 115/125/230mm", "Bond": "Vitrified / Resinoid", "Standard": "EN 12413 / OSHA" },
-    features: ["Norton premium abrasive","Klingspor INOX stainless grade","MOS marked safety","Standard and specialty grit sizes"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-029",
+    "name": "Angles",
+    "productCode": "ANGLES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 5,
+    "reviewCount": 73,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Angles%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Angles designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "CM-DB-003",
-    name: "Drill Bits, Taps & Dies",
-    productCode: "DB-HSS-1TO13-25PC-SET",
-    brand: "Addison / Dormer",
-    categorySlug: "consumables-mro", categoryName: "Consumables & MRO",
-    price: 0, rating: 4.6, reviewCount: 203,
-    images: ["https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=800&q=80"],
-    description: "Addison HSS M2 drill bit sets (1 to 13 mm, 25 piece), Dormer carbide drills, and Addison BSP/metric tap and die sets for threading. For MS, SS, aluminium, and plastics.",
-    applications: ["Drilling MS and SS","Aluminium and non-ferrous","Threading and tapping","Precision machining","Workshop maintenance"],
-    specifications: { "Drill Bits": "HSS M2 1.0 to 25mm, IS 5101/DIN 338", "Tap Sets": "Metric M3 to M24 / BSP 1/8 to 2 inch", "Die Sets": "Metric M3 to M24", "Carbide Drills": "0.5 to 20mm" },
-    features: ["Addison and Dormer genuine","M2 HSS grade","Split point self-centring","Individual bits and full sets"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-030",
+    "name": "I-Beams",
+    "productCode": "IBEAMS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 68,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=I-Beams%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality I-Beams designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
   {
-    id: "CM-LB-004",
-    name: "Lubricants & Grease",
-    productCode: "LB-CASTROL-EP2-3KG",
-    brand: "Castrol / 3M",
-    categorySlug: "consumables-mro", categoryName: "Consumables & MRO",
-    price: 0, rating: 4.7, reviewCount: 198,
-    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"],
-    description: "Industrial lubricants and MRO supplies — Castrol EP2 lithium grease (3 kg/18 kg), hydraulic oil ISO 46/68, compressor oil, gear oil, 3M industrial adhesives, thread sealants (PTFE tape, Loctite), and cleaning chemicals.",
-    applications: ["Bearing and gearbox lubrication","Hydraulic system oil","Compressor lubrication","Thread sealing","Industrial cleaning"],
-    specifications: { "Grease": "Castrol Spheerol EP2 NLGI 2, -20 to 160 deg C", "Hydraulic Oil": "ISO VG 32/46/68 Mineral", "Gear Oil": "ISO VG 68/150/220/320", "Adhesives": "3M / Loctite Range" },
-    features: ["Castrol genuine lubricants","Full range of viscosity grades","Loctite and 3M adhesives","PTFE tape and thread sealants"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-031",
+    "name": "SS 202 Sheets",
+    "productCode": "SS202SHE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 72,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=SS%20202%20Sheets%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality SS 202 Sheets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
   },
   {
-    id: "CM-CL-005",
-    name: "Cleaning Chemicals & Maintenance Supplies",
-    productCode: "CC-DEGREASER-5L",
-    brand: "WD-40 / 3M",
-    categorySlug: "consumables-mro", categoryName: "Consumables & MRO",
-    price: 0, rating: 4.5, reviewCount: 127,
-    images: ["https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=800&q=80"],
-    description: "Industrial cleaning and maintenance chemicals — WD-40 penetrating oil, heavy duty degreasers, parts washing solvents, rust removers, and 3M maintenance tapes. General MRO supplies for plant maintenance.",
-    applications: ["Equipment de-rusting and penetration","Parts degreasing","Workshop cleaning","Belt dressing","Electrical contact cleaning"],
-    specifications: { "Products": "WD-40, Degreasers, Rust Removers", "Formats": "Aerosol / 1L / 5L / 20L", "Brands": "WD-40 / 3M / Henkel", "MRO": "General maintenance supplies" },
-    features: ["WD-40 and 3M genuine","Aerosol and bulk formats","Biodegradable degreaser options","Full MRO supply range"],
-    datasheetUrl: "", inStock: true,
+    "id": "RM-032",
+    "name": "SS 304 Sheets",
+    "productCode": "SS304SHE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 102,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=SS%20304%20Sheets%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality SS 304 Sheets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
   },
+  {
+    "id": "RM-033",
+    "name": "SS 316 Sheets",
+    "productCode": "SS316SHE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 209,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=SS%20316%20Sheets%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality SS 316 Sheets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "RM-034",
+    "name": "SS Pipes",
+    "productCode": "SSPIPES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 30,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=SS%20Pipes%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality SS Pipes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "RM-035",
+    "name": "SS Rods",
+    "productCode": "SSRODS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 175,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=SS%20Rods%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality SS Rods designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "RM-036",
+    "name": "Aluminium Sheets",
+    "productCode": "ALUMINIU-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 157,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Aluminium%20Sheets%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Aluminium Sheets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "RM-037",
+    "name": "Aluminium Rods",
+    "productCode": "ALUMINIU-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 88,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Aluminium%20Rods%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Aluminium Rods designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "RM-038",
+    "name": "Copper Wires",
+    "productCode": "COPPERWI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 144,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Copper%20Wires%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Copper Wires designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "RM-039",
+    "name": "Bus Bars",
+    "productCode": "BUSBARS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 159,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Bus%20Bars%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Bus Bars designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "RM-040",
+    "name": "Brass Components",
+    "productCode": "BRASSCOM-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 149,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Brass%20Components%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Brass Components designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "RM-041",
+    "name": "Bronze Components",
+    "productCode": "BRONZECO-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "raw-materials",
+    "categoryName": "Raw Materials",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 104,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Bronze%20Components%20Raw%20Materials%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Bronze Components designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-042",
+    "name": "Ball Bearings",
+    "productCode": "BALLBEAR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 12,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Ball%20Bearings%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Ball Bearings designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "MC-043",
+    "name": "Roller Bearings",
+    "productCode": "ROLLERBE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 109,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Roller%20Bearings%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Roller Bearings designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-044",
+    "name": "Pillow Block Bearings",
+    "productCode": "PILLOWBL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 177,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Pillow%20Block%20Bearings%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Pillow Block Bearings designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-045",
+    "name": "Industrial Gearboxes",
+    "productCode": "INDUSTRI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 169,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Industrial%20Gearboxes%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Industrial Gearboxes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-046",
+    "name": "Worm Gearboxes",
+    "productCode": "WORMGEAR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 118,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Worm%20Gearboxes%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Worm Gearboxes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "MC-047",
+    "name": "Helical Gearboxes",
+    "productCode": "HELICALG-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 47,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Helical%20Gearboxes%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Helical Gearboxes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-048",
+    "name": "V Belts",
+    "productCode": "VBELTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 45,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=V%20Belts%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality V Belts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-049",
+    "name": "Timing Belts",
+    "productCode": "TIMINGBE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 154,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Timing%20Belts%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Timing Belts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-050",
+    "name": "Roller Chains",
+    "productCode": "ROLLERCH-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 117,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Roller%20Chains%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Roller Chains designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "MC-051",
+    "name": "Couplings",
+    "productCode": "COUPLING-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 123,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Couplings%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Couplings designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "MC-052",
+    "name": "Sprockets",
+    "productCode": "SPROCKET-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 10,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Sprockets%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Sprockets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "MC-053",
+    "name": "Pulleys",
+    "productCode": "PULLEYS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 117,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Pulleys%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Pulleys designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "MC-054",
+    "name": "Shafts",
+    "productCode": "SHAFTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "mechanical-components",
+    "categoryName": "Mechanical Components",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 24,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Shafts%20Mechanical%20Components%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Shafts designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-055",
+    "name": "Industrial Power Cables",
+    "productCode": "INDUSTRI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 125,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Industrial%20Power%20Cables%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Industrial Power Cables designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-056",
+    "name": "Batteries",
+    "productCode": "BATTERIE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 49,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Batteries%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Batteries designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-057",
+    "name": "Control Cables",
+    "productCode": "CONTROLC-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 52,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Control%20Cables%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Control Cables designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-058",
+    "name": "Cable Trays",
+    "productCode": "CABLETRA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 67,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Cable%20Trays%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Cable Trays designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-059",
+    "name": "Cable Glands",
+    "productCode": "CABLEGLA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 161,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Cable%20Glands%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Cable Glands designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-060",
+    "name": "Insulation Tapes",
+    "productCode": "INSULATI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 150,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Insulation%20Tapes%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Insulation Tapes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "EA-061",
+    "name": "MCC Panels",
+    "productCode": "MCCPANEL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 33,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=MCC%20Panels%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality MCC Panels designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-062",
+    "name": "PCC Panels",
+    "productCode": "PCCPANEL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 37,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=PCC%20Panels%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality PCC Panels designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-063",
+    "name": "PLC Panels",
+    "productCode": "PLCPANEL-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 10,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=PLC%20Panels%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality PLC Panels designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-064",
+    "name": "HMIs",
+    "productCode": "HMIS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 49,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=HMIs%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality HMIs designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-065",
+    "name": "Servo Motors",
+    "productCode": "SERVOMOT-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 127,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Servo%20Motors%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Servo Motors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-066",
+    "name": "AC Motors",
+    "productCode": "ACMOTORS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 163,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=AC%20Motors%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality AC Motors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "EA-067",
+    "name": "DC Motors",
+    "productCode": "DCMOTORS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 5,
+    "reviewCount": 89,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=DC%20Motors%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality DC Motors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "EA-068",
+    "name": "Fans",
+    "productCode": "FANS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 33,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Fans%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Fans designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-069",
+    "name": "VFD Drives",
+    "productCode": "VFDDRIVE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 168,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=VFD%20Drives%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality VFD Drives designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-070",
+    "name": "Transformers",
+    "productCode": "TRANSFOR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 160,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Transformers%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Transformers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "EA-071",
+    "name": "Switchgear",
+    "productCode": "SWITCHGE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "electrical-automation",
+    "categoryName": "Electrical & Automation",
+    "price": 0,
+    "rating": 5,
+    "reviewCount": 62,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Switchgear%20Electrical%20%26%20Automation%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Switchgear designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "HP-072",
+    "name": "Hydraulic Cylinders",
+    "productCode": "HYDRAULI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 100,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hydraulic%20Cylinders%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Hydraulic Cylinders designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "HP-073",
+    "name": "Hydraulic Pumps",
+    "productCode": "HYDRAULI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 69,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hydraulic%20Pumps%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Hydraulic Pumps designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "HP-074",
+    "name": "Hydraulic Power Packs",
+    "productCode": "HYDRAULI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 161,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hydraulic%20Power%20Packs%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Hydraulic Power Packs designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "HP-075",
+    "name": "Pneumatic Cylinders",
+    "productCode": "PNEUMATI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.5,
+    "reviewCount": 198,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Pneumatic%20Cylinders%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Pneumatic Cylinders designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "HP-076",
+    "name": "Air Compressors",
+    "productCode": "AIRCOMPR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 76,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Air%20Compressors%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Air Compressors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "HP-077",
+    "name": "FRL Units",
+    "productCode": "FRLUNITS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.8,
+    "reviewCount": 183,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=FRL%20Units%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality FRL Units designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "HP-078",
+    "name": "Solenoid Valves",
+    "productCode": "SOLENOID-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 99,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Solenoid%20Valves%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Solenoid Valves designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "HP-079",
+    "name": "Hydraulic Hoses",
+    "productCode": "HYDRAULI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.4,
+    "reviewCount": 185,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Hydraulic%20Hoses%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Hydraulic Hoses designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "HP-080",
+    "name": "PU Tubes",
+    "productCode": "PUTUBES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "hydraulic-pneumatic",
+    "categoryName": "Hydraulic & Pneumatic",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 115,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=PU%20Tubes%20Hydraulic%20%26%20Pneumatic%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality PU Tubes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "IS-081",
+    "name": "Safety Helmets",
+    "productCode": "SAFETYHE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 196,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Safety%20Helmets%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Safety Helmets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "IS-082",
+    "name": "Gloves",
+    "productCode": "GLOVES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 165,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Gloves%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Gloves designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "IS-083",
+    "name": "Goggles",
+    "productCode": "GOGGLES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 183,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Goggles%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Goggles designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "IS-084",
+    "name": "Steel Toe Safety Shoes",
+    "productCode": "STEELTOE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 56,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Steel%20Toe%20Safety%20Shoes%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Steel Toe Safety Shoes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "IS-085",
+    "name": "Reflective Jackets",
+    "productCode": "REFLECTI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 80,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Reflective%20Jackets%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Reflective Jackets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "IS-086",
+    "name": "Safety Harness",
+    "productCode": "SAFETYHA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4,
+    "reviewCount": 190,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Safety%20Harness%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Safety Harness designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "IS-087",
+    "name": "Fire Extinguishers",
+    "productCode": "FIREEXTI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.9,
+    "reviewCount": 143,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Fire%20Extinguishers%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Fire Extinguishers designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "IS-088",
+    "name": "Smoke Detectors",
+    "productCode": "SMOKEDET-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 118,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Smoke%20Detectors%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Smoke Detectors designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "IS-089",
+    "name": "Fire Blankets",
+    "productCode": "FIREBLAN-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "industrial-safety",
+    "categoryName": "Industrial Safety",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 27,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Fire%20Blankets%20Industrial%20Safety%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Fire Blankets designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-090",
+    "name": "Welding Electrodes",
+    "productCode": "WELDINGE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 11,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Welding%20Electrodes%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Welding Electrodes designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-091",
+    "name": "Welding Rods",
+    "productCode": "WELDINGR-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 131,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Welding%20Rods%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Welding Rods designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "CM-092",
+    "name": "Grinding Wheels",
+    "productCode": "GRINDING-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 35,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Grinding%20Wheels%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Grinding Wheels designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  },
+  {
+    "id": "CM-093",
+    "name": "Cutting Discs",
+    "productCode": "CUTTINGD-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 128,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Cutting%20Discs%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Cutting Discs designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-094",
+    "name": "Drill Bits",
+    "productCode": "DRILLBIT-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 26,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Drill%20Bits%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Drill Bits designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-095",
+    "name": "Taps",
+    "productCode": "TAPS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.3,
+    "reviewCount": 138,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Taps%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Taps designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "CM-096",
+    "name": "Dies",
+    "productCode": "DIES-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 99,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Dies%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Dies designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-097",
+    "name": "Lubricants",
+    "productCode": "LUBRICAN-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 102,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Lubricants%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Lubricants designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-098",
+    "name": "Grease",
+    "productCode": "GREASE-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.2,
+    "reviewCount": 21,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Grease%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Grease designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-099",
+    "name": "Industrial Adhesives",
+    "productCode": "INDUSTRI-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.1,
+    "reviewCount": 89,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Industrial%20Adhesives%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Industrial Adhesives designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "bestseller"
+  },
+  {
+    "id": "CM-100",
+    "name": "Sealants",
+    "productCode": "SEALANTS-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 34,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Sealants%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Sealants designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-101",
+    "name": "Cleaning Chemicals",
+    "productCode": "CLEANING-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.6,
+    "reviewCount": 32,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Cleaning%20Chemicals%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Cleaning Chemicals designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true
+  },
+  {
+    "id": "CM-102",
+    "name": "Maintenance Supplies",
+    "productCode": "MAINTENA-001",
+    "brand": "Premium Industrial",
+    "categorySlug": "consumables-mro",
+    "categoryName": "Consumables & MRO",
+    "price": 0,
+    "rating": 4.7,
+    "reviewCount": 186,
+    "images": [
+      "https://tse1.mm.bing.net/th?q=Maintenance%20Supplies%20Consumables%20%26%20MRO%20industrial%20product%20hardware&w=400&h=400&c=7&rs=1&p=0"
+    ],
+    "description": "High-quality Maintenance Supplies designed for industrial applications. Provides reliable performance and excellent durability.",
+    "applications": [
+      "Industrial Assembly",
+      "Maintenance",
+      "General Engineering"
+    ],
+    "specifications": {
+      "Standard": "Industrial Standard",
+      "Quality": "Premium"
+    },
+    "features": [
+      "Durable design",
+      "Genuine product",
+      "High performance"
+    ],
+    "inStock": true,
+    "tag": "new"
+  }
 ];
 
 export function getProductsByCategory(slug: string): Product[] {

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
-  Search, ShoppingCart, Phone, Menu, X, ChevronDown,
+  Search, Phone, Menu, X, ChevronDown,
   Gauge, Droplets, Thermometer, Layers, Settings,
   FlaskConical, Shield, Wrench, Zap,
 } from "lucide-react";
@@ -54,11 +54,11 @@ export function Header() {
               <img
                 src="/images/logo.jpeg"
                 alt="S A Enterprises"
-                className="w-16 h-16 object-contain"
+                className="w-20 h-20 md:w-28 md:h-28 object-contain"
               />
               <div>
-                <span className="font-display font-bold text-xl text-slate-900 leading-none block">S A</span>
-                <span className="font-display font-bold text-xl text-orange-600 leading-none block">Enterprises</span>
+                <span className="font-display font-bold text-xl md:text-2xl text-slate-900 leading-none block">S A</span>
+                <span className="font-display font-bold text-xl md:text-2xl text-blue-600 leading-none block">Enterprises</span>
               </div>
             </div>
           </Link>
@@ -70,15 +70,6 @@ export function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2 shrink-0">
-            <Link
-              href="/cart"
-              className="relative p-2 rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <ShoppingCart size={22} className="text-slate-700" />
-              <span className="absolute top-0.5 right-0.5 w-4 h-4 bg-orange-600 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
-                0
-              </span>
-            </Link>
             <button
               className="md:hidden p-2 rounded-lg hover:bg-slate-100"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -102,7 +93,7 @@ export function Header() {
               onMouseEnter={() => setMegaMenuOpen(true)}
               onMouseLeave={() => setMegaMenuOpen(false)}
             >
-              <button className="flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-white bg-orange-600 hover:bg-orange-700 transition-colors">
+              <button className="flex items-center gap-1.5 px-4 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors rounded-t-lg">
                 <Menu size={16} />
                 All Categories
                 <ChevronDown size={14} />
@@ -114,9 +105,9 @@ export function Header() {
                     <Link
                       key={cat.slug}
                       href={`/category/${cat.slug}`}
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-orange-50 group transition-colors"
+                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-blue-50 group transition-colors"
                     >
-                      <div className="w-9 h-9 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center group-hover:bg-orange-200 transition-colors">
+                      <div className="w-9 h-9 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                         {categoryIcons[cat.icon]}
                       </div>
                       <div>
@@ -134,7 +125,7 @@ export function Header() {
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="px-3 py-3 text-sm text-slate-600 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors whitespace-nowrap font-medium"
+                className="px-3 py-3 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors whitespace-nowrap font-medium"
               >
                 {cat.name}
               </Link>
@@ -151,10 +142,10 @@ export function Header() {
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-orange-50 text-sm font-medium text-slate-700"
+                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-blue-50 text-sm font-medium text-slate-700"
                 onClick={() => setMobileOpen(false)}
               >
-                <span className="text-orange-600">{categoryIcons[cat.icon]}</span>
+                <span className="text-blue-600">{categoryIcons[cat.icon]}</span>
                 {cat.name}
               </Link>
             ))}
