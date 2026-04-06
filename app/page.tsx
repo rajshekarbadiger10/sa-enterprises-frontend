@@ -41,7 +41,7 @@ export default async function HomePage() {
               <Link href="/search?q=" className="btn-secondary bg-white/10 border-white/20 text-white hover:bg-white/20 text-base px-7 py-3">Browse Catalog</Link>
             </div>
             <div className="flex items-center gap-6 mt-10 pt-8 border-t border-white/10">
-              {[["10,000+","Products"],["500+","Clients"],["50+","Brands"],["15+","Years"]].map(([num, label]) => (
+              {[["10,000+","Products"],["50+","Clients"],["50+","Brands"],["15+","Years"]].map(([num, label]) => (
                 <div key={label}><p className="font-display font-bold text-2xl text-white">{num}</p><p className="text-xs text-slate-400">{label}</p></div>
               ))}
             </div>
